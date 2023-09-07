@@ -19,15 +19,15 @@ export const Routing = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: '/animations/:id',
+        path: '/animations/:id?',
         element: <Animations />,
       },
       {
-        path: '/movies/:id',
+        path: '/movies/:id?',
         element: <Movies />,
       },
       {
-        path: '/series/:id',
+        path: '/series/:id?',
         element: <Series />,
       },
     ],
