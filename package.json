@@ -12,12 +12,14 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "clsx": "^2.0.0",
     "compose-function": "^3.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.15.0",
     "react-router-dom": "^6.15.0",
-    "react-transition-group": "^4.4.5"
+    "react-transition-group": "^4.4.5",
+    "tailwind-merge": "^1.14.0"
   },
   "devDependencies": {
     "@feature-sliced/eslint-config": "^0.1.0-beta.6",
