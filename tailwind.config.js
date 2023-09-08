@@ -8,6 +8,26 @@ const config = {
       fontFamily: {
         sans: ["'Inter'", ...fontFamily.sans],
       },
+      animation: {
+        circle: '1.6s linear infinite both spin',
+        'svg-circle': '1s ease-in-out infinite both svg-circle',
+      },
+      keyframes: {
+        'svg-circle': {
+          ' 0%, 25%': {
+            'stroke-dashoffset': 280,
+            transform: ' rotate(0)',
+          },
+          '50%,75%': {
+            'stroke-dashoffset': 75,
+            transform: 'rotate(45deg)',
+          },
+          '100%': {
+            'stroke-dashoffset': 280,
+            transform: 'rotate(360deg)',
+          },
+        },
+      },
     },
   },
   plugins: [],
