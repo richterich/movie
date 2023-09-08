@@ -1,14 +1,10 @@
-import {Link} from 'react-router-dom';
-
 interface Props {
-  className?: string;
-  to: string;
   text: string;
 }
 
-export const Logo = ({className, to, text}: Props) => {
+export const Logo = ({text}: Props) => {
   return (
-    <Link className={className} to={to}>
+    <>
       <span className="sr-only">{text}</span>
       <svg width="52" height="36" viewBox="0 0 61 42" fill="none">
         <path
@@ -57,6 +53,6 @@ export const Logo = ({className, to, text}: Props) => {
           </linearGradient>
         </defs>
       </svg>
-    </Link>
+    </>
   );
 };
