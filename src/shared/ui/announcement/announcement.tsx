@@ -1,4 +1,4 @@
-import {type ReactNode, type LegacyRef, forwardRef} from 'react';
+import {type ReactNode, forwardRef} from 'react';
 import {cm} from '~/shared/lib';
 
 interface Props {
@@ -6,10 +6,7 @@ interface Props {
   children: ReactNode;
 }
 
-export const Announcement = forwardRef(function Announcement(
-  {className, children}: Props,
-  ref: LegacyRef<HTMLDivElement>
-) {
+export const Announcement = forwardRef<HTMLDivElement, Props>(function Announcement({className, children}, ref) {
   return (
     <div
       ref={ref}
