@@ -1,11 +1,12 @@
 import {type ReactNode, Suspense} from 'react';
-import {Outlet, ScrollRestoration} from 'react-router-dom';
 
 interface Props {
   headerSlot: ReactNode;
+  mainSlot: ReactNode;
   footerSlot: ReactNode;
   navbarSlot?: ReactNode;
   announcementSlot?: ReactNode;
+  children: ReactNode;
 }
 
 export function BaseLayout(props: Props) {
@@ -14,13 +15,11 @@ export function BaseLayout(props: Props) {
       {props.announcementSlot}
       <header>{props.headerSlot}</header>
       <main>
-        <Suspense fallback="...">
-          <Outlet />
-        </Suspense>
+        <Suspense fallback="...">{props.mainSlot}</Suspense>
       </main>
       <footer>{props.footerSlot}</footer>
       {props.navbarSlot}
-      <ScrollRestoration />
+      {props.children}
     </>
   );
 }
