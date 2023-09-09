@@ -1,4 +1,4 @@
-import {type ReactNode, Suspense} from 'react';
+import {type ReactNode} from 'react';
 
 interface Props {
   headerSlot: ReactNode;
@@ -14,9 +14,7 @@ export function BaseLayout(props: Props) {
     <>
       {props.announcementSlot}
       <header>{props.headerSlot}</header>
-      <main>
-        <Suspense fallback="...">{props.mainSlot}</Suspense>
-      </main>
+      <main>{props.mainSlot}</main>
       <footer>{props.footerSlot}</footer>
       {props.navbarSlot}
       {props.children}
