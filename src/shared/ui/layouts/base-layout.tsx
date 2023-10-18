@@ -14,7 +14,7 @@ export function BaseLayout(props: Props) {
     <>
       {props.announcementSlot}
       <header>{props.headerSlot}</header>
-      <main>{props.mainSlot}</main>
+      <main className="flex flex-grow flex-col">{props.mainSlot}</main>
       <footer>{props.footerSlot}</footer>
       {props.navbarSlot}
       {props.children}
