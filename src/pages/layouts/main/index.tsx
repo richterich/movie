@@ -12,7 +12,7 @@ export const MainLayout = () => {
     <BaseLayout
       announcementSlot={<Announcement />}
       headerSlot={<Header />}
-      mainSlot={loading ? <LoadSpinner /> : <Outlet />}
+      mainSlot={loading ? <LoadSpinner className="my-auto" /> : <Outlet />}
       footerSlot={<Footer />}>
       <ScrollRestoration />
     </BaseLayout>
