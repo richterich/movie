@@ -1,7 +1,10 @@
 import {configureStore} from '@reduxjs/toolkit';
+import {baseApi} from '~/shared/api';
+import {reducer} from './root-reducer';
 
 export const store = configureStore({
-  reducer: {},
+  reducer,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(baseApi.middleware),
 });
 
 export type AppDispatch = typeof store.dispatch;
