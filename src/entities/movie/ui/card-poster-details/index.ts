@@ -1,0 +1,1 @@
+export {PosterCardDetails} from './ui';
