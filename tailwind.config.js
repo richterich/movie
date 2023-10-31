@@ -1,4 +1,4 @@
-import {fontFamily} from 'tailwindcss/defaultTheme';
+import {fontFamily, screens} from 'tailwindcss/defaultTheme';
 
 /** @type {import('tailwindcss').Config} */
 const config = {
@@ -7,6 +7,10 @@ const config = {
     extend: {
       fontFamily: {
         sans: ["'Inter'", ...fontFamily.sans],
+      },
+      screens: {
+        xs: '475px',
+        ...screens,
       },
       animation: {
         circle: '1.6s linear infinite both spin',
