@@ -1,1 +1,1 @@
-export {CategoryPreview} from './ui';
+export {Category} from './ui';
