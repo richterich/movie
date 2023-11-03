@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "version": "1.0.0",
+    "version": "1.0.1",
     "title": "Movies API",
     "description": ""
   },
@@ -12,6 +12,43 @@
     }
   ],
   "paths": {
+    "/genres/movies": {
+      "parameters": [
+        {
+          "name": "language",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "summary": "Get genres list",
+        "responses": {
+          "200": {
+            "description": "The genres list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Genres"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/movies/{listType}": {
       "parameters": [
         {
@@ -154,7 +191,7 @@
       },
       "MovieListType": {
         "type": "string",
-        "enum": ["popular", "upcoming", "top-rated"]
+        "enum": ["popular", "upcoming", "top-rated", "now_playing"]
       },
       "MovieShortResponse": {
         "type": "object",
@@ -169,8 +206,17 @@
           "poster": {
             "$ref": "#/components/schemas/ImagePath"
           },
+          "backdrop": {
+            "$ref": "#/components/schemas/ImagePath"
+          },
           "rating": {
             "$ref": "#/components/schemas/MovieRating"
+          },
+          "genreIds": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
           },
           "releaseDate": {
             "type": "string",
@@ -191,6 +237,18 @@
           },
           "name": {
             "type": "string"
+          }
+        }
+      },
+      "Genres": {
+        "type": "object",
+        "required": ["genres"],
+        "properties": {
+          "genres": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Genre"
+            }
           }
         }
       },
