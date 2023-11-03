@@ -1,14 +1,14 @@
 import {type PropsWithChildren} from 'react';
 
-interface Props extends PropsWithChildren {
+interface Props {
   className?: string;
   lazy?: string | boolean;
 }
 
-export const CarouselSlide = (props: Props) => {
+export const CarouselSlide = (props: PropsWithChildren<Props>) => {
   const {children, className, ...rest} = props;
   const attributes = {
-    lazy: true,
+    lazy: false,
     class: className,
     ...rest,
   };

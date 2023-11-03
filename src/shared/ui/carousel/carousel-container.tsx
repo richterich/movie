@@ -2,11 +2,11 @@ import {type PropsWithChildren, useEffect, useRef} from 'react';
 import {register, type SwiperContainer} from 'swiper/element/bundle';
 import {type SwiperOptions} from 'swiper/types';
 
-interface Props extends PropsWithChildren, SwiperOptions {
+interface Props extends SwiperOptions {
   className?: string;
 }
 
-export const CarouselContainer = (props: Props) => {
+export const CarouselContainer = (props: PropsWithChildren<Props>) => {
   const swiper = useRef<SwiperContainer>(null);
   const {children, className, ...rest} = props;
 
