@@ -6,10 +6,10 @@ import {MovieList} from '../model';
 export const movieApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
     fetchMovieList: build.query<MovieList, MoviesDetailParams>({
-      query: ({listType, page}) => ({
-        url: `/movies/${listType}?page=${page}`,
+      query: ({listType, page = 1, language = 'en', countryCode = 'US'}) => ({
+        url: `/movies/${listType}`,
         method: 'GET',
-        params: {language: 'en', countryCode: 'US'},
+        params: {page, language, countryCode},
       }),
       transformResponse: (response: MovieListResponse) => mapMovieList(response),
     }),
