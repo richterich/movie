@@ -1,12 +1,17 @@
 import {createBrowserRouter} from 'react-router-dom';
 import {Error} from '~/pages/error';
 import {MainLayout} from '~/pages/layouts';
+import {genreListLoader} from '~/entities/genre';
+import {store} from './app-store.config';
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: <MainLayout />,
     errorElement: <Error />,
+    loader: async () => {
+      return await genreListLoader(store.dispatch);
+    },
     children: [
       {
         index: true,
