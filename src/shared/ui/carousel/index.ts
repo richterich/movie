@@ -1,2 +1,2 @@
-export {CarouselContainer} from './carousel-container';
-export {CarouselSlide} from './carousel-slide';
+export {NavigationCarousel} from './navigation-carousel';
+export {CarouselSlide, CarouselContainer} from './base';
