@@ -1,8 +1,27 @@
-export const SpinnerCircle = () => {
+import type {SVGAttributes} from 'react';
+
+interface SpinnerAttributes extends SVGAttributes<SVGCircleElement> {}
+
+const defaultAttributes: SVGAttributes<SVGCircleElement> = {
+  strokeWidth: '4px',
+  strokeDasharray: 285,
+  strokeLinecap: 'round',
+  stroke: '#86198f',
+};
+
+export const SpinnerCircle = (attr: SpinnerAttributes) => {
+  const {width = 96, height = 96, ...rest} = attr;
+  const attributes = Object.assign({...defaultAttributes}, rest);
+
   return (
-    <svg className="animate-circle max-h-[96px] max-w-[96px] fill-sky-800" viewBox="0 0 100 100">
+    <svg
+      width={width}
+      height={height}
+      className="max-h-[96px] max-w-[96px] animate-circle fill-none"
+      viewBox="0 0 100 100">
       <circle
-        className="animate-svg-circle origin-center fill-transparent stroke-sky-800 stroke-[8px] [stroke-dasharray:285] [stroke-linecap:round]"
+        {...attributes}
+        className="origin-center animate-svg-circle fill-transparent"
         cx="50"
         cy="50"
         r="45"></circle>
