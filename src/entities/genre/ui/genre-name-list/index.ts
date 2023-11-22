@@ -1,0 +1,1 @@
+export {GenreNameList} from './ui';

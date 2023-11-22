@@ -3,6 +3,4 @@ export interface Genre {
   name: string;
 }
 
-export interface GenreList {
-  genres: Genre[];
-}
+export type GenreList = MapOf<Genre>;

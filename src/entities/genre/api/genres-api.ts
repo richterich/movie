@@ -1,7 +1,7 @@
 import {baseApi} from '~/shared/api';
-import {Genres as GenresResponse} from '~/shared/api/dto';
+import type {Genres as GenresResponse} from '~/shared/api/dto';
 import {mapGenreList} from '../lib';
-import {GenreList} from '../model';
+import type {GenreList} from '../model';
 
 export const genresApi = baseApi.injectEndpoints({
   endpoints: (build) => ({

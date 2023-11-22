@@ -1,24 +1,22 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {genresApi} from '../api';
-import {type GenreList} from './types';
+import type {GenresState} from './types.slice';
 
-type GenreListState = GenreList;
-
-const initialState: GenreListState = {
-  genres: [],
+const initialState: GenresState = {
+  movies: null,
 };
 
 export const genreSlice = createSlice({
-  name: 'genreList',
+  name: 'genreLists',
   initialState,
   reducers: {
     clearGenreList: (state) => {
-      state.genres = [];
+      state.movies = initialState.movies;
     },
   },
   extraReducers: (builder) => {
-    builder.addMatcher(genresApi.endpoints.fetchGenreList.matchFulfilled, (state: GenreListState, {payload}) => {
-      state.genres = Array.from(payload.genres);
+    builder.addMatcher(genresApi.endpoints.fetchGenreList.matchFulfilled, (state, {payload}) => {
+      state.movies = payload;
     });
   },
 });
