@@ -15,7 +15,7 @@ export const YouTubePlayer = ({className, videoKeys}: Props) => {
     <>
       {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center">
-          <SpinnerCircle stroke="#fff" />
+          <SpinnerCircle />
         </div>
       )}
       <iframe
