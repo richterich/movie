@@ -6,7 +6,7 @@ const defaultAttributes: SVGAttributes<SVGCircleElement> = {
   strokeWidth: '4px',
   strokeDasharray: 285,
   strokeLinecap: 'round',
-  stroke: '#86198f',
+  stroke: '#fff',
 };
 
 export const SpinnerCircle = (attr: SpinnerAttributes) => {
