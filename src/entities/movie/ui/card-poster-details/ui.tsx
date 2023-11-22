@@ -1,6 +1,6 @@
-import {type ReactNode} from 'react';
+import type {ReactNode} from 'react';
 import {MaterialIcon} from '~/shared/ui/icon';
-import {type Movie} from '../../model';
+import type {Movie} from '../../model';
 
 interface Props {
   movie: Movie;

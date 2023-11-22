@@ -1,1 +1,1 @@
-export {movieApi, useFetchMovieListQuery} from './movie-api';
+export {movieApi, useFetchMovieListQuery, useFetchVideosQuery} from './movie-api';

@@ -1,7 +1,7 @@
 import {baseApi} from '~/shared/api';
-import {MovieListResponse, MoviesDetailParams} from '~/shared/api/dto';
-import {mapMovieList} from '../lib';
-import {MovieList} from '../model';
+import type {MovieListResponse, MoviesDetailParams, MovieVideosResponse, VideosDetailParams} from '~/shared/api/dto';
+import {mapMovieList, mapVideoList} from '../lib';
+import type {MovieList, VideoList} from '../model';
 
 export const movieApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
@@ -13,7 +13,15 @@ export const movieApi = baseApi.injectEndpoints({
       }),
       transformResponse: (response: MovieListResponse) => mapMovieList(response),
     }),
+    fetchVideos: build.query<VideoList, VideosDetailParams>({
+      query: ({id, types, language = 'en'}) => ({
+        url: `/movies/${id}/videos`,
+        method: 'GET',
+        params: {types, language},
+      }),
+      transformResponse: (response: MovieVideosResponse) => mapVideoList(response),
+    }),
   }),
 });
 
-export const {useFetchMovieListQuery} = movieApi;
+export const {useFetchMovieListQuery, useFetchVideosQuery} = movieApi;

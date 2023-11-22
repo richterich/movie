@@ -1,6 +1,7 @@
 import {Link} from 'react-router-dom';
 import {paths} from '~/shared/lib';
-import {type Movie} from '../../model';
+import {LazyImage} from '~/shared/ui/image';
+import type {Movie} from '../../model';
 
 interface Props {
   movie: Movie;
@@ -13,7 +14,7 @@ export const PosterCard = ({movie}: Props) => {
   return (
     <Link className="relative z-10 h-full w-full [&>div]:hover:visible" to={paths.movieDetails(movie.id)}>
       <div className="relative bg-[#111] pt-[150%]">
-        <img
+        <LazyImage
           className="absolute inset-0 h-full w-full"
           src={`https://image.tmdb.org/t/p/w300${movie.poster}`}
           sizes="100%"
