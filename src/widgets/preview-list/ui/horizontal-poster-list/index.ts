@@ -1,0 +1,1 @@
+export {HorizontalPosterlList} from './ui';
