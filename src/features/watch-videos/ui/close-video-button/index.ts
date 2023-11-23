@@ -1,0 +1,1 @@
+export {CloseVideoPlayer} from './ui';
