@@ -28,17 +28,31 @@ export const router = createBrowserRouter([
         },
       },
       {
-        path: '/movies/:id?',
+        path: '/movies',
         async lazy() {
           const Movies = (await import('~/pages/movies')).default;
           return {element: <Movies />};
         },
       },
       {
-        path: '/series/:id?',
+        path: '/movies/:movieId/details',
+        async lazy() {
+          const MovieDetails = (await import('~/pages/movie-details')).default;
+          return {element: <MovieDetails />};
+        },
+      },
+      {
+        path: '/series',
         async lazy() {
           const Series = (await import('~/pages/series')).default;
           return {element: <Series />};
+        },
+      },
+      {
+        path: '/series/:seriesId/details',
+        async lazy() {
+          const SeriesDetails = (await import('~/pages/series-details')).default;
+          return {element: <SeriesDetails />};
         },
       },
     ],
