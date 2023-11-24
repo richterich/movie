@@ -74,8 +74,8 @@ export const Header = () => {
               <NavLink
                 onClick={(e: MouseEvent<HTMLElement>) => setIndicatorPosition(e.currentTarget, indicator.current)}
                 className={({isActive}) => (isActive ? '' : PASSIVE)}
-                to="/animations">
-                Animations
+                to="/celebs">
+                Celebs
               </NavLink>
             </li>
           </ul>

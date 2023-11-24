@@ -21,10 +21,10 @@ export const router = createBrowserRouter([
         },
       },
       {
-        path: '/animations/:id?',
+        path: '/celebs',
         async lazy() {
-          const Animations = (await import('~/pages/animations')).default;
-          return {element: <Animations />};
+          const Celebs = (await import('~/pages/celebs')).default;
+          return {element: <Celebs />};
         },
       },
       {
