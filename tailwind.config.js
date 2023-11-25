@@ -5,6 +5,9 @@ const config = {
   content: ['./**/*.html', './src/**/*.{ts,tsx}'],
   theme: {
     extend: {
+      aspectRatio: {
+        poster: '2 / 3',
+      },
       fontFamily: {
         sans: ["'Inter'", ...fontFamily.sans],
       },
