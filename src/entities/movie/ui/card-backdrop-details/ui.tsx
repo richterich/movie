@@ -20,8 +20,8 @@ export const BackdropCardDetails = ({movie, genresSlot, watchTrailerSlot}: Props
         <span className="cursor-default font-semibold">{movie.rating.toFixed(1)}</span>
       </div>
       <div className="relative pt-[8%] after:absolute after:-top-full after:left-0 after:right-0 after:h-full after:shadow-[inset_0px_-56px_34px_-40px_white,inset_0px_-56px_34px_-40px_white] dark:bg-black after:dark:shadow-[inset_0px_-56px_34px_-40px_black,inset_0px_-56px_34px_-40px_black]">
-        <div className="absolute bottom-0 left-0 right-3/4 z-10 hidden px-4 pt-8 md:block lg:px-8 lg:pt-16">
-          <div className="relative w-full border-2 border-white/10 bg-[#111] pt-[150%] shadow-2xl shadow-black">
+        <div className="absolute bottom-0 left-0 right-3/4 z-10 hidden px-4 md:block lg:px-8">
+          <div className="relative aspect-poster bg-[#111] shadow-lg shadow-black ring-2 ring-white/10">
             <LazyImage
               className="absolute left-0 top-0 h-full w-full overflow-hidden"
               src={`https://image.tmdb.org/t/p/w342${movie.poster}`}

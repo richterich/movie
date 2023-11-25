@@ -13,9 +13,9 @@ export const PosterCard = ({movie}: Props) => {
 
   return (
     <Link className="relative z-10 h-full w-full [&>div]:hover:visible" to={paths.movieDetails(movie.id)}>
-      <div className="relative bg-[#111] pt-[150%]">
+      <div className="relative aspect-poster bg-[#111]">
         <LazyImage
-          className="absolute inset-0 h-full w-full"
+          className="absolute left-0 top-0 h-full w-full overflow-hidden"
           src={`https://image.tmdb.org/t/p/w300${movie.poster}`}
           sizes="100%"
           loading="lazy"
