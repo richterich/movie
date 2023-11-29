@@ -1,3 +1,4 @@
+import TailwindFroms from '@tailwindcss/forms';
 import {fontFamily, screens} from 'tailwindcss/defaultTheme';
 
 /** @type {import('tailwindcss').Config} */
@@ -37,7 +38,7 @@ const config = {
       },
     },
   },
-  plugins: [],
+  plugins: [TailwindFroms],
 };
 
 export default config;
