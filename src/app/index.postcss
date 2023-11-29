@@ -8,14 +8,20 @@
     "opsz" 40;
 }
 
-:root::-webkit-scrollbar {
-  @apply w-2 bg-transparent;
+::-webkit-scrollbar {
+  @apply w-3;
 }
 
-:root::-webkit-scrollbar-track {
-  @apply bg-transparent;
+::-webkit-scrollbar-thumb {
+  @apply h-12 rounded-md border-[3px] border-solid border-transparent bg-gray-400 bg-clip-content;
 }
 
-:root::-webkit-scrollbar-thumb {
-  @apply rounded-md bg-black/50 dark:bg-white/50;
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
+
+@supports (scrollbar-width: thin) {
+  * {
+    scrollbar-width: auto;
+  }
 }
