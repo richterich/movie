@@ -4,3 +4,8 @@ export interface Genre {
 }
 
 export type GenreList = MapOf<Genre>;
+
+export interface GenreFilterItem {
+  name: string;
+  isSelected: boolean;
+}

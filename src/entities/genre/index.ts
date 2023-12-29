@@ -1,4 +1,5 @@
+export {genresApi} from './api';
 export {genreListLoader} from './lib';
-export type {Genre, GenreList} from './model';
+export type {Genre, GenreList, GenreFilterItem} from './model';
 export {genreSlice, clearGenreList, selectGenresByIds} from './model';
-export {GenreNameList} from './ui';
+export {GenreNameList, GenreSelection} from './ui';
