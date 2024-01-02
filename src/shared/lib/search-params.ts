@@ -14,3 +14,15 @@ export const params = {
   years: {min: 'years.min', max: 'years.max'},
   sort: {option: 'sort.by', order: 'sort.order'},
 };
+
+export const OrderSortParams = {
+  Ascending: 'asc',
+  Descending: 'desc',
+} as const;
+
+export const OptionSortParams = {
+  Popularity: 'popularity',
+  Rating: 'rating',
+  ReleaseDate: 'release_date',
+  Title: 'title',
+} as const;
