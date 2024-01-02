@@ -1,3 +1,4 @@
+import type {Dispatch} from '@reduxjs/toolkit';
 import type {SwiperContainer, SwiperSlide} from 'swiper/element';
 
 declare global {
@@ -16,6 +17,7 @@ declare global {
   };
 
   declare namespace App {
+    declare type BaseDispatch = Dispatch;
     declare type AppDispatch = import('~/app/providers/app-store.config').AppDispatch;
     declare type RootState = import('~/app/providers/app-store.config').RootState;
   }
