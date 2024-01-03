@@ -1,0 +1,31 @@
+export type {FiltersAttributes} from './model';
+export {
+  FilterPopupContext,
+  filtersSlice,
+  mapGenresFilterDispatch,
+  mapGenresFilterState,
+  mapKeywordsFilterDispatch,
+  mapKeywordsFilterState,
+  mapPopularityFilterDispatch,
+  mapPopularityFilterState,
+  mapRatingFilterDispatch,
+  mapRatingFilterState,
+  mapYearsFilterDispatch,
+  mapYearsFilterState,
+  genresFilterPreloadedState,
+  keywordsFilterPreloadedState,
+  popularityFilterPreloadedState,
+  ratingFilterPreloadedState,
+  yearsFilterPreloadedState,
+  unsubscribeClearGenresFilter,
+  unsubscribeSetGenresFilter,
+} from './model';
+export {
+  FilterPopup,
+  GenresFilter,
+  KeywordsFilter,
+  OpenFiltersButton,
+  PopularityFilter,
+  RatingFilter,
+  YearsFilter,
+} from './ui';
