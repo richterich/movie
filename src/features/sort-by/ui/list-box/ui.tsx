@@ -1,25 +1,34 @@
 import {Listbox, Transition} from '@headlessui/react';
 import type {PropsWithChildren} from 'react';
 import {Fragment} from 'react';
+import {cm} from '~/shared/lib';
 import {MaterialIcon} from '~/shared/ui/icon';
 import type {SortByOption} from '../../model';
 
 interface ListboxProps {
-  title: string;
-  sortOption: SortByOption;
+  title?: string;
+  sortOption: SortByOption | null;
   setSortOption: (value: SortByOption) => void;
+  getSortOptionName: (value: SortByOption | null) => string;
 }
 
 interface OptionProps {
-  option: SortByOption;
+  sortOption: SortByOption;
+  optionName: string;
 }
 
-export const SortByListbox = ({title, sortOption, children, setSortOption}: PropsWithChildren<ListboxProps>) => {
+export const SortByListbox = ({
+  title,
+  sortOption,
+  children,
+  getSortOptionName,
+  setSortOption,
+}: PropsWithChildren<ListboxProps>) => {
   return (
     <div title={title} className="relative rounded-md bg-[#111] px-6 py-3 transition-colors duration-300">
       <Listbox value={sortOption} onChange={(option: SortByOption) => setSortOption(option)}>
         <MaterialIcon icon="sort" className="align-middle" />
-        <Listbox.Button className="ml-2 w-32 text-left">{sortOption}</Listbox.Button>
+        <Listbox.Button className="ml-2 w-32 text-left">{getSortOptionName(sortOption)}</Listbox.Button>
         <Transition
           as={Fragment}
           enter="transition ease-out duration-100"
@@ -37,16 +46,18 @@ export const SortByListbox = ({title, sortOption, children, setSortOption}: Prop
   );
 };
 
-const SortByOption = ({option}: OptionProps) => {
+const SortByOption = ({sortOption, optionName}: OptionProps) => {
   return (
     <Listbox.Option
-      className="relative cursor-default select-none px-6 py-2 hover:bg-[#1e1e1e]"
-      key={option}
-      value={option}>
+      className="relative cursor-default select-none py-2 pl-10 pr-4 hover:bg-[#1e1e1e]"
+      key={sortOption}
+      value={sortOption}>
       {({selected}) => (
         <>
-          {selected ? <MaterialIcon icon="check_small" className="align-middle" /> : null}
-          <span className={selected ? 'font-medium' : 'font-normal'}>{option}</span>
+          {selected ? (
+            <MaterialIcon icon="check_small" className="absolute inset-y-0 left-0 flex items-center pl-3" />
+          ) : null}
+          <span className={cm('block truncate font-normal', {'font-medium': selected})}>{optionName}</span>
         </>
       )}
     </Listbox.Option>
@@ -54,3 +65,6 @@ const SortByOption = ({option}: OptionProps) => {
 };
 
 SortByListbox.SortByOption = SortByOption;
+{
+  /* <span className="absolute inset-y-0 left-0 flex items-center pl-3"></span> */
+}

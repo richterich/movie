@@ -3,7 +3,7 @@ import {selectSortByOrder} from '../selectors';
 import {setSortOrder} from '../slice';
 
 export interface Props {
-  title: string;
+  title?: string;
 }
 
 export const mapSortOrderState = (state: App.RootState, {title}: Props) => {

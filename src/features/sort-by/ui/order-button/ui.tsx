@@ -4,7 +4,8 @@ import {FlexibleIconButton} from '~/shared/ui/buttons';
 import {SortByOrder} from '../../model';
 
 interface Props {
-  sortOrder: SortByOrder;
+  title?: string | null;
+  sortOrder: SortByOrder | null;
   setSortOrder: (value: SortByOrder) => void;
 }
 

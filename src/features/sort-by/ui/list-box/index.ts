@@ -1,1 +1,1 @@
-export {SortByListbox} from './list-box';
+export {SortByListbox} from './ui';
