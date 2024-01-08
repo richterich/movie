@@ -3,7 +3,7 @@ export const keywordsParams = /^[a-zA-Z]+(?:[, ]+[a-zA-Z]+)*$/;
 export const popularityParams = /^\d+(\.\d+)?$/;
 export const ratingParams = /^(0*(?:[1-9](?:\.\d+)?|10(?:\.0+)?))$/;
 export const yearsParams = /^[1-9]\d{3}$/;
-export const sortOptionParams = /^(?!_)(?!.*_$)[a-zA-Z_]{1,16}$/;
+export const sortOptionParams = /^(?!_)(?!.*_$)[a-zA-Z_]{1,20}$/;
 export const sortOrderParams = /^(desc|asc)$/i;
 
 export const params = {
@@ -23,6 +23,6 @@ export const OrderSortParams = {
 export const OptionSortParams = {
   Popularity: 'popularity',
   Rating: 'rating',
-  ReleaseDate: 'release_date',
-  Title: 'title',
+  PrimaryReleaseDate: 'primary_release_date',
+  Revenue: 'revenue',
 } as const;

@@ -1,8 +1,8 @@
 export const SortOptions = {
   Popularity: 'Popularity',
   Rating: 'Rating',
-  ReleaseDate: 'ReleaseDate',
-  Title: 'Title',
+  PrimaryReleaseDate: 'PrimaryReleaseDate',
+  Revenue: 'Revenue',
 } as const;
 
 export const SortOrders = {

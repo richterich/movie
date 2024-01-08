@@ -12,8 +12,8 @@ export const mapSortByOption = (value: string): SortByOption | null => {
 
   if (is(OptionSortParams.Popularity)) return SortOptions.Popularity;
   if (is(OptionSortParams.Rating)) return SortOptions.Rating;
-  if (is(OptionSortParams.ReleaseDate)) return SortOptions.ReleaseDate;
-  if (is(OptionSortParams.Title)) return SortOptions.Title;
+  if (is(OptionSortParams.PrimaryReleaseDate)) return SortOptions.PrimaryReleaseDate;
+  if (is(OptionSortParams.Revenue)) return SortOptions.Revenue;
 
   return null;
 };
