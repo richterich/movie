@@ -1,5 +1,12 @@
 import {baseApi} from '~/shared/api';
-import type {MovieListResponse, MoviesDetailParams, MovieVideosResponse, VideosDetailParams} from '~/shared/api/dto';
+import type {
+  MovieListResponse,
+  MoviesDetailParams,
+  MovieVideosResponse,
+  VideosDetailParams,
+  MoviesListParams,
+} from '~/shared/api/dto';
+import {SortOrder, SortOption} from '~/shared/api/dto';
 import {mapMovieList, mapVideoList} from '../lib';
 import type {MovieList, VideoList} from '../model';
 
@@ -21,7 +28,40 @@ export const movieApi = baseApi.injectEndpoints({
       }),
       transformResponse: (response: MovieVideosResponse) => mapVideoList(response),
     }),
+    fetchMoviesByFilters: build.query<MovieList, MoviesListParams>({
+      query: ({
+        withGenres,
+        voteCountGte,
+        voteCountLte,
+        ratingGte,
+        ratingLte,
+        primaryReleaseDateGte,
+        primaryReleaseDateLte,
+        withKeywords,
+        sortBy = {option: SortOption.Popularity, order: SortOrder.Desc},
+        page = 1,
+        language = 'en-US',
+      }) => ({
+        url: `/discover/movies`,
+        method: 'GET',
+        params: {
+          withGenres,
+          'voteCount.gte': voteCountGte,
+          'voteCount.lte': voteCountLte,
+          'rating.gte': ratingGte,
+          'rating.lte': ratingLte,
+          'primaryReleaseDate.gte': primaryReleaseDateGte,
+          'primaryReleaseDate.lte': primaryReleaseDateLte,
+          withKeywords,
+          'sortBy[option]': sortBy.option,
+          'sortBy[order]': sortBy.order,
+          page,
+          language,
+        },
+      }),
+      transformResponse: (response: MovieListResponse) => mapMovieList(response),
+    }),
   }),
 });
 
-export const {useFetchMovieListQuery, useFetchVideosQuery} = movieApi;
+export const {useFetchMovieListQuery, useFetchVideosQuery, useFetchMoviesByFiltersQuery} = movieApi;
