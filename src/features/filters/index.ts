@@ -2,6 +2,7 @@ export type {FiltersAttributes} from './model';
 export {
   FilterPopupContext,
   filtersSlice,
+  mapFiltersState,
   mapGenresFilterDispatch,
   mapGenresFilterState,
   mapKeywordsFilterDispatch,

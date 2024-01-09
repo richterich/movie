@@ -18,6 +18,7 @@ export type {
   YearsFilterComponentProps,
 } from './state-mapper';
 export {
+  mapFiltersState,
   mapGenresFilterDispatch,
   mapGenresFilterState,
   mapKeywordsFilterDispatch,

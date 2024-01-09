@@ -3,6 +3,7 @@ export type {Props as GenresFilterComponentProps} from './map-genres-state';
 export type {Props as PopularityFilterComponentProps} from './map-popularity-state';
 export type {Props as RatingFilterComponentProps} from './map-rating-state';
 export type {Props as YearsFilterComponentProps} from './map-years-state';
+export {mapFiltersState} from './map-filters-state';
 export {mapGenresFilterDispatch, mapGenresFilterState} from './map-genres-state';
 export {mapKeywordsFilterDispatch, mapKeywordsFilterState} from './map-keywords-state';
 export {mapPopularityFilterDispatch, mapPopularityFilterState} from './map-popularity-state';
