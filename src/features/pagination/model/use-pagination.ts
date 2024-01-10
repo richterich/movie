@@ -9,10 +9,10 @@ export interface UsePaginationParams {
 
 export const usePagination = ({paginated, window}: UsePaginationParams) => {
   const {page, totalPages} = paginated;
-  const {sibling} = window;
-  const length = (MIN_SIBLING << 1) + (sibling << 1);
+  const sibling = window.sibling > MIN_SIBLING ? window.sibling : MIN_SIBLING;
+  const length = sibling >= totalPages - 1 ? totalPages - 1 : sibling << 1;
   const start = page - length;
-  const positiveOffset = start + (MIN_SIBLING + sibling);
+  const positiveOffset = start + sibling;
   const negativeOffset = totalPages - length;
   const overStart = start < 0;
   const overEnd = positiveOffset >= negativeOffset;
