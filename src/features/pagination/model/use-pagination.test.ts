@@ -49,4 +49,12 @@ describe('[features/pagination] use-pagination', () => {
 
     expect(result).toEqual([1, 2]);
   });
+
+  test('should handle case when total pages is equals to zero', () => {
+    const paginated = {page: 2, totalPages: 0};
+    const window = {sibling: 3};
+    const result = usePagination({paginated, window});
+
+    expect(result).toEqual([]);
+  });
 });
